@@ -1,9 +1,9 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { ApolloProvider } from '@apollo/client';
 import { rocketScienceTheme } from '@theme';
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import { ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { AnimatePresenceLayout } from '@layouts/animate-presence';
 import createApolloClient from 'services/apollo-client/apollo.client';
 
