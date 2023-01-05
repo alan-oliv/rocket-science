@@ -1,6 +1,6 @@
 # Rocket Science
 
-<img src="./docs/readme-01.png" align="right" width="38%"/>
+<img src="./docs/readme-01.png" align="right" width="45%"/>
 
 You can see it in action [here](https://rocket-science-pearl.vercel.app/) 🚀
 
