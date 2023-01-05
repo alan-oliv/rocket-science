@@ -269,6 +269,13 @@
   dependencies:
     "@chakra-ui/shared-utils" "2.0.4"
 
+"@chakra-ui/icons@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-2.0.15.tgz#9613eae03e08dd9622723540cd3bf582e38b1fde"
+  integrity sha512-/Hsefej7DfRMg+Go+gf/UU4PHNMPmba41ogO1K3242aP9VSs/6/qXB3zrZHl21OX/rdrK408VqYEPInLmUwiHw==
+  dependencies:
+    "@chakra-ui/icon" "3.0.14"
+
 "@chakra-ui/image@2.0.13":
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@chakra-ui/image/-/image-2.0.13.tgz#adc8bc97a65ef15491d7abfa7e4aa31debb3e4c1"
@@ -989,6 +996,16 @@
     js-yaml "^4.1.0"
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
+
+"@fontsource/fira-sans-condensed@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/fira-sans-condensed/-/fira-sans-condensed-4.5.10.tgz#35c8484e9a727ec025dbf100652c79cdcd1744a8"
+  integrity sha512-js8PeLgzEDz4u5muf0JHQq+3ujLkXsbfvITi/kaa8P3m2+3u77QxV0/v/W1c6Tw2pjEQ7lTglarC4i98iG8PnQ==
+
+"@fontsource/pt-sans@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/pt-sans/-/pt-sans-4.5.11.tgz#feee7bf8af118b4e6532533eb1fe6190c41802a7"
+  integrity sha512-w0Z11/B8PYcgM67fTSgZ9poFNJ8AdnglKlcH0aMdU7bBNfiHuKvZOxwUsynWpgghToh3GS4H2TizNnmi1wSEYg==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -2957,6 +2974,11 @@ react-focus-lock@^2.9.1:
     react-clientside-effect "^1.2.6"
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
+
+react-icons@^4.7.1:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.7.1.tgz#0f4b25a5694e6972677cb189d2a72eabea7a8345"
+  integrity sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
