@@ -997,6 +997,16 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/anybody@^4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@fontsource/anybody/-/anybody-4.5.4.tgz#00e2c069cb07d32718df8c38bc716e9793c0aa45"
+  integrity sha512-Fbc+9EUedHXsxZ1PeNl87dzxTV4MwStdBJpzHH6PvWl3XiHSjS4EvNiAT7TY3VrPquGIrx5sI8CEXMUuHKthLQ==
+
+"@fontsource/pt-sans@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/pt-sans/-/pt-sans-4.5.11.tgz#feee7bf8af118b4e6532533eb1fe6190c41802a7"
+  integrity sha512-w0Z11/B8PYcgM67fTSgZ9poFNJ8AdnglKlcH0aMdU7bBNfiHuKvZOxwUsynWpgghToh3GS4H2TizNnmi1wSEYg==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
