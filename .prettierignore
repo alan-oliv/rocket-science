@@ -1,0 +1,7 @@
+# Generated Files
+/.next
+/generated
+graphql.schema.json
+
+# Dependencies
+/node_modules
