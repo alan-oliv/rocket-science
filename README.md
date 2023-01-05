@@ -1,4 +1,4 @@
-# Rocket Science
+# rocket-science
 
 <img src="./docs/readme-01.png" align="right" width="50%"/>
 
