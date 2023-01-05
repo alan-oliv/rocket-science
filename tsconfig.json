@@ -22,6 +22,8 @@
       "@containers/*": ["containers/*"],
       "@layouts": ["layouts"],
       "@layouts/*": ["layouts/*"],
+      "@theme": ["theme"],
+      "@theme/*": ["theme/*"],
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

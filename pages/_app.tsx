@@ -1,8 +1,9 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { rocketScienceTheme } from '@theme';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { ReactElement, ReactNode } from 'react';
-import { rocketScienceTheme } from '../theme';
+import { AnimatePresenceLayout } from '@layouts/animate-presence';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -16,9 +17,11 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return getLayout(
-    <ChakraProvider theme={rocketScienceTheme}>
-      <Component {...pageProps} />
-    </ChakraProvider>,
+    <AnimatePresenceLayout>
+      <ChakraProvider theme={rocketScienceTheme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </AnimatePresenceLayout>,
   );
 };
 
