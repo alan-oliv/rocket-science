@@ -1,10 +1,10 @@
-import { StyleFunctionProps } from '@chakra-ui/styled-system';
+import { colors } from './colors';
 
 const styles = {
-  global: (props: StyleFunctionProps) => ({
+  global: () => ({
     body: {
       h: '100%',
-      backgroundColor: '#0C0C13',
+      backgroundColor: colors.rocketShades[500],
     },
     html: {
       h: '100%',

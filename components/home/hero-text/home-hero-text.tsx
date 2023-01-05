@@ -1,7 +1,8 @@
 import { Button } from '@chakra-ui/button';
-import { TriangleUpIcon } from '@chakra-ui/icons';
+import { Icon } from '@chakra-ui/icons';
 import { Box, Container, Text, VStack } from '@chakra-ui/layout';
 import NextLink from 'next/link';
+import { TfiArrowTopRight } from 'react-icons/tfi';
 
 export const HomeHeroText = () => {
   return (
@@ -30,13 +31,12 @@ export const HomeHeroText = () => {
 
           <NextLink href='/launches' passHref>
             <Button
-              colorScheme='blackAlpha'
               size='xs'
               alignItems='center'
               justifyContent='center'
-              rightIcon={<TriangleUpIcon />}
+              rightIcon={<Icon as={TfiArrowTopRight} />}
             >
-              <Box pt='2px'>Launch</Box>
+              Launch
             </Button>
           </NextLink>
         </Box>

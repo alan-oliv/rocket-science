@@ -1,10 +1,12 @@
 import { extendTheme } from '@chakra-ui/theme-utils';
-import { fonts } from './foundations/fonts';
-import { styles } from './foundations/styles';
+import { foundations } from './foundations';
+import { components } from './components';
 
 const rocketScienceTheme = extendTheme({
-  fonts,
-  styles,
+  ...foundations,
+  components,
 });
+
+console.log(rocketScienceTheme);
 
 export { rocketScienceTheme };
