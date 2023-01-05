@@ -4,7 +4,7 @@
 
 You can see it in action [here](https://rocket-science-pearl.vercel.app/) 🚀
 
-#_SpaceX offers a public GraphQL API that allows requests to get data about
+_SpaceX offers a public GraphQL API that allows requests to get data about
 launches, rockets, and company information. The API is easy to use and
 well-documented, making it a great resource for anyone interested in SpaceX or
 space exploration._
