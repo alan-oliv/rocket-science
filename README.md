@@ -1,17 +1,17 @@
 # Rocket Science
 
-<img src="./docs/readme-01.png" align="right" width="33%"/>
+<img src="./docs/readme-01.png" align="right" width="38%"/>
 
 You can see it in action [here](https://rocket-science-pearl.vercel.app/) 🚀
 
-_SpaceX offers a public GraphQL API that allows requests to get data about
+#_SpaceX offers a public GraphQL API that allows requests to get data about
 launches, rockets, and company information. The API is easy to use and
 well-documented, making it a great resource for anyone interested in SpaceX or
 space exploration._
 
 This repo is a simple
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
-that serves as a study on how thi
+that serves as a study on how this API and schema works.
 
 ### Running locally
 
