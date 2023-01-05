@@ -97,7 +97,9 @@ export const LaunchContainer = () => {
 
       {isLoadingLaunches && <LaunchesListViewSkeleton items={listSize} />}
 
-      {!isLoadingLaunches && !hasResults && <LaunchesListViewNoRecords />}
+      {!isLoadingLaunches && launchesData && !hasResults && (
+        <LaunchesListViewNoRecords />
+      )}
 
       {!isLoadingLaunches && hasResults && (
         <>

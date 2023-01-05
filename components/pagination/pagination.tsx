@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Flex,
   HStack,
@@ -34,31 +35,33 @@ export const Pagination = ({
         spacing={5}
         divider={<StackDivider borderColor='gray.700' />}
       >
-        <Text>
-          {`Launch ${from} - ${
-            to > totalRecords ? totalRecords : to
-          } of ${totalRecords} results`}
-        </Text>
+        <Box display={{ base: 'none', md: 'inherit' }}>
+          <Text>
+            {`Launch ${from} - ${
+              to > totalRecords ? totalRecords : to
+            } of ${totalRecords} results`}
+          </Text>
 
-        <HStack spacing={0}>
-          <Text pr={2}>Showing </Text>
-          <Select
-            textAlign='center'
-            variant='unstyled'
-            size='sm'
-            w='50px'
-            value={listSize}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-              onChangeListSize(Number(e.target.value));
-            }}
-          >
-            <option value='20'>20</option>
-            <option value='30'>30</option>
-            <option value='40'>40</option>
-            <option value='50'>50</option>
-          </Select>
-          <Text>per page</Text>
-        </HStack>
+          <HStack spacing={0}>
+            <Text pr={2}>Showing </Text>
+            <Select
+              textAlign='center'
+              variant='unstyled'
+              size='sm'
+              w='50px'
+              value={listSize}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                onChangeListSize(Number(e.target.value));
+              }}
+            >
+              <option value='20'>20</option>
+              <option value='30'>30</option>
+              <option value='40'>40</option>
+              <option value='50'>50</option>
+            </Select>
+            <Text>per page</Text>
+          </HStack>
+        </Box>
       </HStack>
 
       <HStack spacing={1}>
