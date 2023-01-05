@@ -3,7 +3,7 @@ import { CenteredListLayout } from '@layouts/centered-list';
 
 import Head from 'next/head';
 
-export const Launches = () => {
+const Launches = () => {
   return (
     <>
       <Head>
@@ -18,3 +18,5 @@ export const Launches = () => {
 Launches.getLayout = (page: JSX.Element) => (
   <CenteredListLayout>{page}</CenteredListLayout>
 );
+
+export default Launches;

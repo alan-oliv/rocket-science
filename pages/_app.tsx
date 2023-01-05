@@ -5,7 +5,7 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
 import { AnimatePresenceLayout } from '@layouts/animate-presence';
-import createApolloClient from 'services/apollo-client/apollo.client';
+import { createApolloClient } from '@services/apollo-client';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;

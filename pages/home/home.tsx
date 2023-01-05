@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { HomeContainer } from '@containers/home';
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <Head>
@@ -12,3 +12,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

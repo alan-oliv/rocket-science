@@ -1,3 +1,3 @@
-import { Launches } from './launches';
+import Launches from './launches';
 
 export default Launches;
