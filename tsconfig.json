@@ -19,6 +19,7 @@
       "@components/*": ["components/*"],
       "@containers/*": ["containers/*"],
       "@layouts/*": ["layouts/*"],
+      "@services/*": ["services/*"],
       "@theme": ["theme"],
       "@theme/*": ["theme/*"],
       "@generated/*": ["generated/*"],
