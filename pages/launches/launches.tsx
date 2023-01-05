@@ -1,3 +1,4 @@
+import { LaunchContainer } from '@containers/launch-container';
 import Head from 'next/head';
 
 export const Launches = () => {
@@ -6,6 +7,8 @@ export const Launches = () => {
       <Head>
         <title>Rocket science</title>
       </Head>
+
+      <LaunchContainer />
     </>
   );
 };
