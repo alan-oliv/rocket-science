@@ -20,6 +20,8 @@
       "@components/*": ["components/*"],
       "@containers": ["containers"],
       "@containers/*": ["containers/*"],
+      "@layouts": ["layouts"],
+      "@layouts/*": ["layouts/*"],
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

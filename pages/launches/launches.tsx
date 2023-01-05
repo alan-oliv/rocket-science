@@ -1,4 +1,5 @@
 import { LaunchContainer } from '@containers/launch-container';
+import { CenteredListLayout } from '@layouts/centered-list-layout';
 import Head from 'next/head';
 
 export const Launches = () => {
@@ -12,3 +13,7 @@ export const Launches = () => {
     </>
   );
 };
+
+Launches.getLayout = (page: JSX.Element) => (
+  <CenteredListLayout>{page}</CenteredListLayout>
+);
