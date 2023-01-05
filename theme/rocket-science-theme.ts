@@ -7,6 +7,4 @@ const rocketScienceTheme = extendTheme({
   components,
 });
 
-console.log(rocketScienceTheme);
-
 export { rocketScienceTheme };
