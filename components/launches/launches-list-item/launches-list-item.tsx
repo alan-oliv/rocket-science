@@ -26,8 +26,6 @@ export const LaunchesListItem = ({ launch }: Props) => {
 
   const date = new Date(launch.launch_date_utc).toDateString();
 
-  console.log(launch);
-
   return (
     <Card>
       <Box
@@ -58,7 +56,9 @@ export const LaunchesListItem = ({ launch }: Props) => {
 
         <Box fontSize='xs' pt={5}>
           <HStack alignItems='center' spacing={5}>
-            <Text size='xs'>Launched on {date}</Text>
+            <Text size='xs' color='rocketShades.100'>
+              Launched on {date}
+            </Text>
           </HStack>
         </Box>
       </CardBody>
@@ -68,7 +68,6 @@ export const LaunchesListItem = ({ launch }: Props) => {
           {launch.links?.article_link && (
             <Tooltip
               label='Open external article'
-              hasArrow
               placement='start'
               shouldWrapChildren
             >
@@ -85,7 +84,6 @@ export const LaunchesListItem = ({ launch }: Props) => {
           {launch.links?.video_link && (
             <Tooltip
               label='Open external video'
-              hasArrow
               placement='start'
               shouldWrapChildren
             >

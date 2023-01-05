@@ -988,10 +988,12 @@ export type LaunchesPastFragment = { __typename?: 'Launch', id?: string | null, 
 
 export type GetPastLaunchesQueryVariables = Exact<{
   limit: Scalars['Int'];
+  offset: Scalars['Int'];
+  mission?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type GetPastLaunchesQuery = { __typename?: 'Query', launchesPast?: Array<{ __typename?: 'Launch', id?: string | null, details?: string | null, mission_name?: string | null, launch_date_utc?: any | null, launch_site?: { __typename?: 'LaunchSite', site_name_long?: string | null } | null, links?: { __typename?: 'LaunchLinks', article_link?: string | null, video_link?: string | null, flickr_images?: Array<string | null> | null } | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null } | null> | null };
+export type GetPastLaunchesQuery = { __typename?: 'Query', launchesPast?: Array<{ __typename?: 'Launch', id?: string | null, details?: string | null, mission_name?: string | null, launch_date_utc?: any | null, launch_site?: { __typename?: 'LaunchSite', site_name_long?: string | null } | null, links?: { __typename?: 'LaunchLinks', article_link?: string | null, video_link?: string | null, flickr_images?: Array<string | null> | null } | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null } | null> | null, launchesPastResult?: { __typename?: 'LaunchesPastResult', result?: { __typename?: 'Result', totalCount?: number | null } | null } | null };
 
 
       export interface PossibleTypesResultData {
