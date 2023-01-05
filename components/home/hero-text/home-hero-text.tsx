@@ -16,7 +16,13 @@ export const HomeHeroText = () => {
     >
       <VStack alignItems='flex-start' spacing={5}>
         <Box>
-          <Container p={0} pb={4} maxW='250' fontSize='sm'>
+          <Container
+            p={0}
+            pb={4}
+            maxW='250'
+            fontSize='sm'
+            color='rocketShades.500'
+          >
             <Text align='left'>
               Whether you are an <strong>aerospace enthusiast</strong> or simply
               interested in the latest space exploration, this is something for

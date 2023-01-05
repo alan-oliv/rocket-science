@@ -2,9 +2,10 @@ import { gql, useLazyQuery } from '@apollo/client';
 import { LaunchesFilter } from '@components/launches/launches-filter';
 import { LaunchesListView } from '@components/launches/launches-list-view';
 import {
-  LaunchesListViewSkeleton,
-  PaginationSkeleton,
-} from '@components/launches/launches-list-view/skeleton';
+  LaunchesListViewError,
+  LaunchesListViewNoRecords,
+} from '@components/launches/launches-list-view/error';
+import { LaunchesListViewSkeleton } from '@components/launches/launches-list-view/skeleton';
 import { Pagination } from '@components/pagination';
 import type {
   GetPastLaunchesQuery,
@@ -84,22 +85,21 @@ export const LaunchContainer = () => {
   const totalRecords =
     launchesData?.launchesPastResult?.result?.totalCount || 0;
 
+  const hasResults = pastLaunches.length > 0;
+
   if (errorReadingLaunches) {
-    return <div>Something went wrong</div>;
+    return <LaunchesListViewError />;
   }
 
   return (
     <>
       <LaunchesFilter onSearch={handleSearch} loading={isLoadingLaunches} />
 
-      {isLoadingLaunches && (
-        <>
-          <PaginationSkeleton />
-          <LaunchesListViewSkeleton items={listSize} />
-        </>
-      )}
+      {isLoadingLaunches && <LaunchesListViewSkeleton items={listSize} />}
 
-      {!isLoadingLaunches && pastLaunches.length && (
+      {!isLoadingLaunches && !hasResults && <LaunchesListViewNoRecords />}
+
+      {!isLoadingLaunches && hasResults && (
         <>
           <Pagination
             listSize={listSize}
@@ -108,6 +108,7 @@ export const LaunchContainer = () => {
             totalRecords={totalRecords}
             currentPage={page}
           />
+
           <LaunchesListView launches={pastLaunches} />
         </>
       )}

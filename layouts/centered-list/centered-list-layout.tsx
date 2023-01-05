@@ -14,7 +14,7 @@ export const CenteredListLayout = ({ children }: Props) => {
       bgPosition='left 170px'
       w='100%'
     >
-      <Box maxWidth='1080px' pb='80px' w='90%'>
+      <Box maxWidth='1080px' pb='80px' w='90%' minH='100vh'>
         {children}
       </Box>
     </Center>
