@@ -95,10 +95,11 @@ export const LaunchContainer = () => {
       {isLoadingLaunches && (
         <>
           <PaginationSkeleton />
-          <LaunchesListViewSkeleton />
+          <LaunchesListViewSkeleton items={listSize} />
         </>
       )}
-      {!isLoadingLaunches && (
+
+      {!isLoadingLaunches && pastLaunches.length && (
         <>
           <Pagination
             listSize={listSize}

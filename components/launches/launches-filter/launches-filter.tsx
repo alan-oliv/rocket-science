@@ -45,6 +45,7 @@ export const LaunchesFilter = ({ onSearch, loading }: Props) => {
             w='95%'
             placeholder='Search a space mission'
             onChange={handleOnChange}
+            type='text'
           />
         </HStack>
       </Flex>
