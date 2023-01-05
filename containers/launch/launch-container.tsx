@@ -1,17 +1,28 @@
 import { gql, useLazyQuery } from '@apollo/client';
-import { useEffect, useState } from 'react';
+import { LaunchesFilter } from '@components/launches/launches-filter';
+import { LaunchesListView } from '@components/launches/launches-list-view';
+import { Pagination } from '@components/pagination';
 import type {
   GetPastLaunchesQuery,
   GetPastLaunchesQueryVariables,
   LaunchesPastFragment,
 } from '@generated/graphql';
+import { useEffect, useState } from 'react';
 import { LAUNCHES_PAST_FRAGMENT } from './fragment';
-import { LaunchesListView } from '@components/launches/launches-list-view';
 
 const GET_LAUNCHES = gql`
-  query GetPastLaunchesQuery($limit: Int!) {
-    launchesPast(limit: $limit) {
+  query GetPastLaunchesQuery($limit: Int!, $offset: Int!, $mission: String) {
+    launchesPast(
+      limit: $limit
+      offset: $offset
+      find: { mission_name: $mission }
+    ) {
       ...LaunchesPastFragment
+    }
+    launchesPastResult(find: { mission_name: $mission }) {
+      result {
+        totalCount
+      }
     }
   }
   ${LAUNCHES_PAST_FRAGMENT}
@@ -20,7 +31,10 @@ const GET_LAUNCHES = gql`
 const DEFAULT_LAUNCHES_LIST_SIZE = 20;
 
 export const LaunchContainer = () => {
+  const [page, setSelectedPage] = useState<number>(1);
   const [listSize, setListSize] = useState<number>(DEFAULT_LAUNCHES_LIST_SIZE);
+  const [missionName, setMissionName] = useState<string>('');
+
   const [
     pastLaunchesQuery,
     {
@@ -35,6 +49,26 @@ export const LaunchContainer = () => {
     },
   );
 
+  const handleSearch = (missionName: string) => {
+    setMissionName(missionName);
+    setSelectedPage(1);
+  };
+
+  const handleChangeListSize = (listSize: number) => {
+    setListSize(listSize);
+    setSelectedPage(1);
+  };
+
+  useEffect(() => {
+    pastLaunchesQuery({
+      variables: {
+        limit: listSize,
+        offset: listSize * (page - 1),
+        mission: missionName,
+      },
+    });
+  }, [pastLaunchesQuery, missionName, page, listSize]);
+
   // due to Space-X schema, we need to filter out null values
   const pastLaunches: LaunchesPastFragment[] =
     (launchesData?.launchesPast &&
@@ -43,13 +77,8 @@ export const LaunchContainer = () => {
       ) as LaunchesPastFragment[])) ||
     [];
 
-  useEffect(() => {
-    pastLaunchesQuery({
-      variables: {
-        limit: listSize,
-      },
-    });
-  }, [pastLaunchesQuery, listSize]);
+  const totalRecords =
+    launchesData?.launchesPastResult?.result?.totalCount || 0;
 
   if (errorReadingLaunches) {
     return <div>Something went wrong</div>;
@@ -57,8 +86,16 @@ export const LaunchContainer = () => {
 
   return (
     <>
+      <LaunchesFilter onSearch={handleSearch} loading={isLoadingLaunches} />
       {!isLoadingLaunches && (
         <>
+          <Pagination
+            listSize={listSize}
+            onChangeListSize={handleChangeListSize}
+            onChangePage={setSelectedPage}
+            totalRecords={totalRecords}
+            currentPage={page}
+          />
           <LaunchesListView launches={pastLaunches} />
         </>
       )}

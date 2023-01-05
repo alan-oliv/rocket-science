@@ -26,8 +26,6 @@ export const LaunchesListItem = ({ launch }: Props) => {
 
   const date = new Date(launch.launch_date_utc).toDateString();
 
-  console.log(launch);
-
   return (
     <Card>
       <Box
