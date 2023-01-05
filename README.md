@@ -15,14 +15,10 @@ that serves as a study on how this API and schema works.
 
 ### Running locally
 
-First, run the development server:
-
-```bash
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+First, run the development server with `yarn dev` and open
+[http://localhost:3000](http://localhost:3000) with your browser to see the
+result. (Or you can view the deployed version
+[here](https://rocket-science-pearl.vercel.app/))
 
 ### Learn More
 
