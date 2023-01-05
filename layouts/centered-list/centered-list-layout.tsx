@@ -13,9 +13,8 @@ export const CenteredListLayout = ({ children }: Props) => {
       bgAttachment='fixed'
       bgPosition='left 170px'
       w='100%'
-      h='100%'
     >
-      <Box h='100%' w='100%' maxWidth='1080px' pb='80px'>
+      <Box maxWidth='1080px' pb='80px' w='90%'>
         {children}
       </Box>
     </Center>

@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import type {
   GetPastLaunchesQuery,
   GetPastLaunchesQueryVariables,
+  LaunchesPastFragment,
 } from '@generated/graphql';
 import { LAUNCHES_PAST_FRAGMENT } from './fragment';
+import { LaunchesListView } from '@components/launches/launches-list-view';
 
 const GET_LAUNCHES = gql`
   query GetPastLaunchesQuery($limit: Int!) {
@@ -33,6 +35,14 @@ export const LaunchContainer = () => {
     },
   );
 
+  // due to Space-X schema, we need to filter out null values
+  const pastLaunches: LaunchesPastFragment[] =
+    (launchesData?.launchesPast &&
+      (launchesData?.launchesPast.filter(
+        (launch) => launch !== null,
+      ) as LaunchesPastFragment[])) ||
+    [];
+
   useEffect(() => {
     pastLaunchesQuery({
       variables: {
@@ -45,5 +55,13 @@ export const LaunchContainer = () => {
     return <div>Something went wrong</div>;
   }
 
-  return <></>;
+  return (
+    <>
+      {!isLoadingLaunches && (
+        <>
+          <LaunchesListView launches={pastLaunches} />
+        </>
+      )}
+    </>
+  );
 };

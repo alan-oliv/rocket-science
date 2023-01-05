@@ -1,6 +1,5 @@
 import { LaunchContainer } from '@containers/launch';
 import { CenteredListLayout } from '@layouts/centered-list';
-import { AnimatePresenceLayout } from '@layouts/animate-presence';
 
 import Head from 'next/head';
 
