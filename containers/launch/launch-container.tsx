@@ -1,6 +1,10 @@
 import { gql, useLazyQuery } from '@apollo/client';
 import { LaunchesFilter } from '@components/launches/launches-filter';
 import { LaunchesListView } from '@components/launches/launches-list-view';
+import {
+  LaunchesListViewSkeleton,
+  PaginationSkeleton,
+} from '@components/launches/launches-list-view/skeleton';
 import { Pagination } from '@components/pagination';
 import type {
   GetPastLaunchesQuery,
@@ -87,6 +91,13 @@ export const LaunchContainer = () => {
   return (
     <>
       <LaunchesFilter onSearch={handleSearch} loading={isLoadingLaunches} />
+
+      {isLoadingLaunches && (
+        <>
+          <PaginationSkeleton />
+          <LaunchesListViewSkeleton />
+        </>
+      )}
       {!isLoadingLaunches && (
         <>
           <Pagination

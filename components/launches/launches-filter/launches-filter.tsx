@@ -35,18 +35,15 @@ export const LaunchesFilter = ({ onSearch, loading }: Props) => {
       >
         <HStack
           w='100%'
-          spacing={8}
+          spacing={2}
           alignItems='center'
           justifyContent='center'
         >
           <Icon as={TfiSearch} color='rocketShades.200' boxSize={8} />
           <Input
-            w='93%'
+            variant='bigSearch'
+            w='95%'
             placeholder='Search a space mission'
-            border='none'
-            fontSize='3xl'
-            color='white'
-            _placeholder={{ color: 'rocketShades.200' }}
             onChange={handleOnChange}
           />
         </HStack>
