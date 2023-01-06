@@ -8,7 +8,7 @@ const bigSearch = definePartsStyle({
   field: {
     fontFamily: 'Fira Sans Condensed, sans-serif',
     letterSpacing: '-0.03em',
-    fontSize: '4xl',
+    fontSize: '1.3rem',
     fontWeight: '300',
     background: 'transparent',
     color: 'white',
