@@ -7,7 +7,7 @@ const Launches = () => {
   return (
     <>
       <Head>
-        <title>Rocket science</title>
+        <title>Rocket science - Lauches</title>
       </Head>
 
       <LaunchContainer />
