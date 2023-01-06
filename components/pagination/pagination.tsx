@@ -29,13 +29,12 @@ export const Pagination = ({
 
   return (
     <Flex justifyContent='space-between' py={5}>
-      <HStack
-        color='rocketShades.100'
-        fontStyle='italic'
-        spacing={5}
-        divider={<StackDivider borderColor='gray.700' />}
-      >
-        <Box display={{ base: 'none', md: 'inherit' }}>
+      <HStack color='rocketShades.100' fontStyle='italic'>
+        <HStack
+          display={{ base: 'none', md: 'inherit' }}
+          spacing={5}
+          divider={<StackDivider borderColor='gray.700' />}
+        >
           <Text>
             {`Launch ${from} - ${
               to > totalRecords ? totalRecords : to
@@ -61,7 +60,7 @@ export const Pagination = ({
             </Select>
             <Text>per page</Text>
           </HStack>
-        </Box>
+        </HStack>
       </HStack>
 
       <HStack spacing={1}>
